@@ -1,0 +1,68 @@
+// Table of Content
+// ===============================================
+// # General
+// # Grid
+// # Typography */
+
+// # General
+// =============================================== */
+
+// Image Path
+$image-path: '../../img';
+
+// Page
+$page-bg: #fff;
+
+// Width
+$width-base: 1200px; // Mainly used for centering
+
+// Gutters
+$gutter-base: 20px;
+$gutter-top: 0;
+$gutter-right: $gutter-base;
+$gutter-bottom: $gutter-base;
+$gutter-left: $gutter-base;
+$gutter-side: 20px; // Used when base width is reached
+$gutter-side-tablet: 20px; // Used when base width is reached
+$gutter-side-phone: 20px; // Used when base width is reached
+
+// Colors
+$color-error: #d9534f;
+$color-success: #5cb85c;
+$color-info: #5bc0de;
+
+// Breakpoints
+$breakpoint-phone: 480px;
+$breakpoint-tablet: 780px;
+$breakpoint-desktop: 992px;
+$breakpoint-desktop-large: 1200px;
+$breakpoint-desktop-xlarge: 1920px;
+
+// # Animations */
+$base-duration: 0.25s;
+$base-timing: ease-in-out;
+
+// # Typography */
+$text-color-base: #333;
+
+$link-color-base: #337ab7;
+$link-decoration-base: none;
+$link-hover-color-base: darken($link-color-base, 15%);
+$link-hover-decoration-base: underline;
+
+$font-family-base: Arial, sans-serif;
+$font-size-base: 20px;
+$font-size-h1: 40px;
+$font-size-h2: 35px;
+$font-size-h3: 30px;
+$font-size-h4: 20px;
+$font-size-h5: 15px;
+$font-size-h6: 10px;
+
+$line-height-base: 1.4; // Always use integer no px or rem values
+
+$heading-margin: 0 0 20px 0;
+$heading-font-family: inherit;
+$heading-font-weight: 600;
+$heading-line-height: 1.1;
+$heading-color: inherit;
