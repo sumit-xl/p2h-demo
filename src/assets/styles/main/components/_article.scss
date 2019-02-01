@@ -1,0 +1,95 @@
+.article {
+	overflow: hidden;
+	text-align: center;
+	@include position(relative, null);
+	@include padding(100px null null);
+	@include max-screen($breakpoint-tablet) {
+		@include padding(50px null null);
+	}
+	@include max-screen($breakpoint-phone) {
+		@include padding(30px null null);
+	}
+
+	&__heading {
+		@include padding(null null 59px);
+		@include max-screen($breakpoint-tablet) {
+			@include padding(null null 40px);
+		}
+		@include max-screen($breakpoint-phone) {
+			@include padding(null null 25px);
+		}
+
+		p {
+			font-size: 22px;
+			font-weight: 300;
+			max-width: 650px;
+			line-height: 1.48;
+			@include margin(0 auto);
+			@include max-screen($breakpoint-tablet) {
+				font-size: 20px;
+			}
+			@include max-screen($breakpoint-phone) {
+				font-size: 18px;
+			}
+		}
+	}
+
+	&__image {
+		img {
+			border-radius: 14px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		@include margin(20px -60px null -30px);
+		@include max-screen($breakpoint-desktop) {
+			@include margin(null -5px null -15px);
+		}
+		@include max-screen($breakpoint-tablet) {
+			@include margin(0 null null);
+		}
+		@include max-screen($breakpoint-phone) {
+			@include margin(30px null null);
+		}
+
+		article {
+			display: flex;
+			flex-wrap: wrap;
+			width: calc(33.333% - 20px);
+			@include padding(45px 25px 45px 45px);
+			@include max-screen($breakpoint-desktop) {
+				width: 33.333%;
+				@include padding(30px 10px 30px 20px);
+			}
+			@include max-screen($breakpoint-phone) {
+				width: 100%;
+				@include padding(0 null 10px);
+			}
+
+			figure {
+				width: 84px;
+				@include max-screen($breakpoint-desktop) {
+					width: 75px;
+				}
+				@include max-screen($breakpoint-tablet) {
+					width: 60px;
+				}
+			}
+
+			aside {
+				text-align: left;
+				width: calc(100% - 84px);
+				@include max-screen($breakpoint-desktop) {
+					width: calc(100% - 75px);
+				}
+				@include max-screen($breakpoint-tablet) {
+					@include padding(null null null 5px);
+					width: calc(100% - 60px);
+				}
+			}
+		}
+	}
+}

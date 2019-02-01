@@ -1,0 +1,105 @@
+.footer {
+	width: 100%;
+	z-index: 99;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+	background-color: $color-gray-dark;
+	box-shadow: 0 2px 4px rgba($color-black, 0.1);
+	@include position(relative, null);
+	@include padding(60px null 37px);
+	@include max-screen($breakpoint-tablet) {
+		@include padding(40px null 30px);
+	}
+	@include max-screen($breakpoint-phone) {
+		@include padding(50px null 25px);
+	}
+
+	a {
+		color: rgba($color-white, 0.6);
+
+		&:hover {
+			color: $color-white;
+		}
+	}
+
+	.col-3 {
+		width: 23%;
+		text-align: right;
+		@include padding(3px 60px);
+		@include max-screen($breakpoint-tablet) {
+			width: 17%;
+			@include padding(null 10px);
+		}
+		@include max-screen($breakpoint-phone) {
+			width: 100%;
+			@include position(absolute, 10px 15px null null);
+		}
+	}
+
+	.col-2 {
+		width: 43%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@include padding(5px null null 70px);
+		@include max-screen($breakpoint-tablet) {
+			@include padding(null null null 10px);
+		}
+		@include max-screen($breakpoint-phone) {
+			width: 100%;
+			@include padding(15px null null 0);
+		}
+
+		ul {
+			width: 33.33%;
+			@include padding(null 10px null null);
+
+			li {
+				@include padding(null null 15px);
+				@include max-screen($breakpoint-phone) {
+					@include padding(null null 5px);
+				}
+				h4 {
+					font-weight: 500;
+					color: $color-white;
+					@include margin(null null 0);
+				}
+			}
+		}
+	}
+
+	.col-1 {
+		width: 34%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@include max-screen($breakpoint-tablet) {
+			width: 40%;
+		}
+		@include max-screen($breakpoint-phone) {
+			width: 100%;
+		}
+
+		a {
+			width: 74px;
+			@include max-screen($breakpoint-tablet) {
+				width: 60px;
+			}
+		}
+
+		p {
+			width: calc(100% - 75px);
+			color: rgba($color-white, 0.6);
+			@include padding(null null null 24px);
+			@include max-screen($breakpoint-desktop) {
+				@include padding(null null null 10px);
+			}
+			@include max-screen($breakpoint-tablet) {
+				width: calc(100% - 60px);
+			}
+		}
+	}
+
+}

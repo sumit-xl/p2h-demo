@@ -17,12 +17,48 @@ body {
 	font-size: $font-size-base;
 	background-color: $page-bg;
 	font-family: $font-family-base;
-	-webkit-font-smoothing:antialiased;
-	-webkit-text-size-adjust:none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: none;
+	@include padding(null null 600px);
+	@include max-screen($breakpoint-tablet) {
+		font-size: $font-size-base - 1px;
+	}
+}
+
+:focus {
+	outline: none;
+}
+
+input,
+textarea,
+select {
+	border-radius: 0;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+}
+
+figure {
+	@include margin(0);
+}
+
+fieldset {
+	border: 0;
+	@include margin(0);
+	@include padding(0);
 }
 
 img {
 	border: none;
+	display: block;
+	max-width: 100%;
 }
 
 a {
@@ -33,20 +69,6 @@ a {
 		color: $link-hover-color-base;
 	}
 }
-
-.clear {
-	@include clearfix;
-}
-
-.container {
-	max-width: 100%;
-	@include padding(null calc((100% - #{$width-base}) / 2));
-	@include max-screen($breakpoint-tablet) {
-		@include padding(null 15px);
-	}
-}
-
-
 
 h1,
 h2,
@@ -59,13 +81,26 @@ h6 {
 	font-family: $heading-font-family;
 	font-weight: $heading-font-weight;
 	line-height: $heading-line-height;
+	@include max-screen($breakpoint-phone) {
+		@include margin(null null 15px);
+	}
 }
 
 h1 {
+	text-align: center;
+	letter-spacing: -0.04em;
 	font-size: $font-size-h1;
+	@include max-screen($breakpoint-tablet) {
+		font-size: $font-size-h1 - 10px;
+	}
+	@include max-screen($breakpoint-phone) {
+		font-size: $font-size-h1 - 18px;
+	}
 }
 
 h2 {
+	text-align: center;
+	letter-spacing: -0.04em;
 	font-size: $font-size-h2;
 }
 
@@ -74,7 +109,9 @@ h3 {
 }
 
 h4 {
+	font-weight: 400;
 	font-size: $font-size-h4;
+	@include margin(null null 10px);
 }
 
 h5 {
@@ -90,7 +127,12 @@ a {
 }
 
 p {
+	line-height: 1.6;
+	color: $color-light-gray;
 	@include margin(0 0 20px);
+	@include max-screen($breakpoint-tablet) {
+		line-height: 1.4;
+	}
 }
 
 strong {
@@ -109,4 +151,23 @@ dfn {
 sup,
 sub {
 	line-height: 0;
+}
+
+main {
+	@include padding(105px null null);
+	@include max-screen($breakpoint-phone) {
+		@include padding(75px null null);
+	}
+}
+
+.clear {
+	@include clearfix;
+}
+
+.container {
+	max-width: 100%;
+	@include padding(null calc((100% - #{$width-base}) / 2));
+	@include max-screen($breakpoint-desktop) {
+		@include padding(null 15px);
+	}
 }

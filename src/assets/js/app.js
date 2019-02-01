@@ -8,10 +8,27 @@
 // just like app.init()
 // from the good ol'days
 
-const colors = [ 'pink', 'red', 'blue' ]
-const moColors = ['yellow', 'papayawhip']
+(function( $, window, document, undefined ) {
 
-const allTheColors = [ ...colors, ...moColors ]
-allTheColors.map(color => console.log(`The color is ${color}`))
+	'use strict';
 
-// Happy coding from Pixel2HTML
+	$(
+		function() {
+
+			$( '.header__menu-toggle' ).on( 'click', function( event ) {
+				event.preventDefault();
+				$( 'body' ).toggleClass( 'is-active' );
+			} );
+
+			$( window ).scroll( function() {
+				if ( $( this ).scrollTop() > 53 ) {
+					$( '.header' ).addClass('sticky');
+				} else {
+					$( '.header' ).removeClass('sticky');
+				}
+			} );
+
+		}
+	);
+
+})( jQuery, window, document );
