@@ -13,7 +13,7 @@
 		@include padding(40px null 30px);
 	}
 	@include max-screen($breakpoint-phone) {
-		@include padding(50px null 25px);
+		@include padding(20px null);
 	}
 
 	a {
@@ -24,81 +24,124 @@
 		}
 	}
 
-	article {
+	&__logo {
+		width: 33%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		@include max-screen($breakpoint-tablet) {
+			width: 33%;
+		}
+		@include max-screen($breakpoint-phone) {
+			width: 100%;
+		}
+
+		a {
+			width: 74px;
+			@include max-screen($breakpoint-tablet) {
+				width: 50px;
+				display: inline-block;
+			}
+		}
+
+		p {
+			width: calc(100% - 75px);
+			color: rgba($color-white, 0.6);
+			@include padding(null null null 24px);
+			@include max-screen($breakpoint-desktop) {
+				@include padding(null null null 10px);
+			}
+			@include max-screen($breakpoint-tablet) {
+				width: calc(100% - 50px);
+				@include padding(null null null 10px);
+			}
+		}
+	}
+
+	&__nav {
+		width: 43%;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		@include padding(5px null null 70px);
+		@include max-screen($breakpoint-tablet) {
+			width: 42%;
+			@include padding(null null null 30px);
+		}
+		@include max-screen($breakpoint-phone) {
+			width: 100%;
+			@include padding(15px null null 0);
+		}
 
-		&:nth-child(1) {
-			width: 34%;
-			@include max-screen($breakpoint-tablet) {
-				width: 40%;
-			}
-			@include max-screen($breakpoint-phone) {
-				width: 100%;
-			}
+		ul {
+			width: 33.33%;
+			@include padding(null 10px null null);
 
-			a {
-				width: 74px;
-				@include max-screen($breakpoint-tablet) {
-					width: 60px;
+			li {
+				@include padding(null null 15px);
+				@include max-screen($breakpoint-phone) {
+					@include padding(null null 5px);
 				}
-			}
 
-			p {
-				width: calc(100% - 75px);
-				color: rgba($color-white, 0.6);
-				@include padding(null null null 24px);
-				@include max-screen($breakpoint-desktop) {
-					@include padding(null null null 10px);
-				}
-				@include max-screen($breakpoint-tablet) {
-					width: calc(100% - 60px);
+				h4 {
+					font-weight: 500;
+					color: $color-white;
+					@include margin(null null 0);
 				}
 			}
 		}
+	}
 
-		&:nth-child(2) {
-			width: 43%;
-			@include padding(5px null null 70px);
-			@include max-screen($breakpoint-tablet) {
-				@include padding(null null null 10px);
-			}
+	&__language {
+		width: 23%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		@include padding(3px 60px null null);
+		@include position(relative, null null);
+		@include max-screen($breakpoint-desktop) {
+			@include padding(null 10px null null);
+		}
+		@include max-screen($breakpoint-tablet) {
+			width: 25%;
+		}
+		@include max-screen($breakpoint-phone) {
+			width: 100%;
+			justify-content: center;
+			@include padding(15px null null null);
+		}
+
+		> a {
+			display: inline-block;
+			@include position(relative, null);
+			@include padding(null 20px null 25px);
+			@include background-image(language-icon, svg, left 2px, no-repeat);
 			@include max-screen($breakpoint-phone) {
-				width: 100%;
-				@include padding(15px null null 0);
 			}
 
-			ul {
-				width: 33.33%;
-				@include padding(null 10px null null);
-
-				li {
-					@include padding(null null 15px);
-					@include max-screen($breakpoint-phone) {
-						@include padding(null null 5px);
-					}
-
-					h4 {
-						font-weight: 500;
-						color: $color-white;
-						@include margin(null null 0);
-					}
-				}
+			&:after {
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 5px 4.5px 0 4.5px;
+				border-color: $color-light-gray transparent transparent transparent;
+				@include position(absolute, 7px 2px null null);
 			}
 		}
 
-		&:nth-child(3) {
-			width: 23%;
-			text-align: right;
-			@include padding(3px 60px);
+		ul {
+			width: 110px;
+			float: right;
+			display: none;
 			@include max-screen($breakpoint-tablet) {
-				width: 17%;
-				@include padding(null 10px);
-			}
-			@include max-screen($breakpoint-phone) {
 				width: 100%;
-				@include position(absolute, 10px 15px null null);
+				text-align: center;
+				float: none;
+			}
+
+			li {
+				@include padding(4px null null);
 			}
 		}
 	}

@@ -5,10 +5,12 @@
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	background-color: $color-white;
+	transition: $base-duration $base-timing;
 	box-shadow: 0 2px 4px rgba($color-black, 0.1);
 	@include padding(38px null 37px);
 	@include position(fixed, 0 null null 0);
 	@include max-screen($breakpoint-phone) {
+		@include position(absolute, null);
 		@include padding(25px null);
 	}
 
@@ -38,6 +40,16 @@
 				a {
 					font-weight: 500;
 					color: $color-light-gray;
+
+					&:hover {
+						color: $color-blue;
+					}
+				}
+
+				&.is-active {
+					a {
+						color: $color-blue;
+					}
 				}
 			}
 		}
@@ -105,6 +117,12 @@
 					transform: rotate(-45deg);
 				}
 			}
+		}
+	}
+
+	&.sticky {
+		@include min-screen($breakpoint-phone + 1px) {
+			@include padding(20px null);
 		}
 	}
 }

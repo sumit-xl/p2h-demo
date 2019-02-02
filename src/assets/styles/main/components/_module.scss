@@ -1,0 +1,52 @@
+.module {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	@include max-screen($breakpoint-phone) {
+		@include padding(null null 20px);
+	}
+	article {
+		display: flex;
+		flex-wrap: wrap;
+		width: calc(33.333% - 20px);
+		@include padding(45px 25px 40px 15px);
+		@include max-screen($breakpoint-desktop) {
+			width: 33.333%;
+		}
+		@include max-screen($breakpoint-tablet) {
+			@include padding(20px 5px 10px);
+		}
+		@include max-screen($breakpoint-phone) {
+			width: 100%;
+			@include padding(null 0 0);
+		}
+
+		p {
+			@include max-screen($breakpoint-phone) {
+				@include margin(null null 5px);
+			}
+		}
+
+		figure {
+			width: 84px;
+			@include max-screen($breakpoint-desktop) {
+				width: 75px;
+			}
+			@include max-screen($breakpoint-tablet) {
+				width: 60px;
+			}
+		}
+
+		aside {
+			text-align: left;
+			width: calc(100% - 84px);
+			@include max-screen($breakpoint-desktop) {
+				width: calc(100% - 75px);
+			}
+			@include max-screen($breakpoint-tablet) {
+				@include padding(null null null 5px);
+				width: calc(100% - 60px);
+			}
+		}
+	}
+}

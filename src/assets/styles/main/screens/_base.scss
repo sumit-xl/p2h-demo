@@ -92,6 +92,7 @@ h1 {
 	font-size: $font-size-h1;
 	@include max-screen($breakpoint-tablet) {
 		font-size: $font-size-h1 - 10px;
+		@include margin(null null 15px);
 	}
 	@include max-screen($breakpoint-phone) {
 		font-size: $font-size-h1 - 18px;
@@ -104,6 +105,7 @@ h2 {
 	font-size: $font-size-h2;
 	@include max-screen($breakpoint-tablet) {
 		font-size: $font-size-h1 - 10px;
+		@include margin(null null 15px);
 	}
 	@include max-screen($breakpoint-phone) {
 		font-size: $font-size-h1 - 18px;
@@ -118,6 +120,9 @@ h4 {
 	font-weight: 400;
 	font-size: $font-size-h4;
 	@include margin(null null 10px);
+	@include max-screen($breakpoint-phone) {
+		font-size: $font-size-h4 - 1px;
+	}
 }
 
 h5 {

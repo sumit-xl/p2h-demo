@@ -1,4 +1,4 @@
-.price {
+.package {
 	width: 100%;
 	background-color: $color-light;
 	@include position(relative, null);
@@ -6,23 +6,29 @@
 	@include max-screen($breakpoint-desktop) {
 		@include padding(70px null null);
 	}
+	@include max-screen($breakpoint-tablet) {
+		@include padding(50px null null);
+	}
 	@include max-screen($breakpoint-phone) {
 		@include padding(30px null null);
 	}
 
-	&__heading {
-		@extend .article__heading;
+	&__content {
+		@extend .article;
+		@include padding(0 null 58px);
+		@include max-screen($breakpoint-tablet) {
+			@include padding(null null 30px);
+		}
+		@include max-screen($breakpoint-phone) {
+			@include padding(null null 15px);
+		}
 
 		p {
-			@include margin(null null 19px);
+			@include margin(null null 18px);
 			@include max-screen($breakpoint-tablet) {
 				@include margin(null null 10px);
 			}
 		}
-	}
-
-	p {
-		color: $color-gray;
 	}
 
 	&__list {
@@ -39,7 +45,7 @@
 			@include margin(null null -90px);
 		}
 
-		article {
+		> li {
 			width: 33.333%;
 			text-align: center;
 			@include padding(null 30px 28px);
@@ -73,7 +79,7 @@
 					color: $color-white;
 				}
 
-				.price__top {
+				.package__top {
 					border-color: rgba($color-white, 0.2);
 
 					strong {
@@ -85,7 +91,7 @@
 					}
 				}
 
-				.price__mid {
+				.package__mid {
 					border-color: rgba($color-white, 0.2);
 
 					span {

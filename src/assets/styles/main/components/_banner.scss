@@ -1,0 +1,9 @@
+.banner {
+	@include padding(null null 18px);
+	img {
+		border-radius: 14px;
+		@include max-screen($breakpoint-phone) {
+			border-radius: 10px;
+		}
+	}
+}
