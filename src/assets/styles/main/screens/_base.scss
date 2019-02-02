@@ -19,7 +19,6 @@ body {
 	font-family: $font-family-base;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: none;
-	@include padding(null null 600px);
 	@include max-screen($breakpoint-tablet) {
 		font-size: $font-size-base - 1px;
 	}
@@ -114,6 +113,13 @@ h2 {
 
 h3 {
 	font-size: $font-size-h3;
+	@include max-screen($breakpoint-tablet) {
+		font-size: $font-size-h3 - 3px;
+		@include margin(null null 15px);
+	}
+	@include max-screen($breakpoint-phone) {
+		font-size: $font-size-h3 - 5px;
+	}
 }
 
 h4 {

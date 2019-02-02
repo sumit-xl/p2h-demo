@@ -1,0 +1,67 @@
+.slider {
+	z-index: 9;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	align-items: center;
+	justify-content: flex-start;
+	@include padding(133px null 0);
+	@include position(relative, null);
+	@include max-screen($breakpoint-desktop) {
+		@include padding(80px null null);
+	}
+	@include max-screen($breakpoint-tablet) {
+		@include padding(50px null null);
+	}
+	@include max-screen($breakpoint-phone) {
+		@include padding(30px null null);
+	}
+
+	figure {
+		width: 65.4%;
+		@include margin(null null null -290px);
+		@include max-screen($breakpoint-desktop) {
+			@include margin(null null null -200px);
+		}
+		@include max-screen($breakpoint-tablet) {
+			@include margin(null null null -150px);
+		}
+		@include max-screen($breakpoint-phone) {
+			width: 260px;
+			@include margin(0 auto);
+		}
+	}
+
+	&__block {
+		display: none;
+		@include position(relative, null);
+
+		&:first-child {
+			display: block;
+		}
+	}
+
+	&__content {
+		width: 50%;
+		@include position(relative, null);
+		@include padding(5px 100px 73px 130px);
+		@include max-screen($breakpoint-desktop) {
+			@include padding(null 50px null 70px);
+		}
+		@include max-screen($breakpoint-tablet) {
+			width: 53%;
+			@include padding(null 20px null 40px);
+		}
+		@include max-screen($breakpoint-phone) {
+			width: 100%;
+			@include padding(10px 25px 50px);
+		}
+
+		p {
+			@include max-screen($breakpoint-phone) {
+				@include margin(null null 5px);
+			}
+		}
+	}
+}

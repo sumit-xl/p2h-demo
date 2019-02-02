@@ -5,6 +5,7 @@
 	@include max-screen($breakpoint-phone) {
 		@include padding(null null 20px);
 	}
+
 	article {
 		display: flex;
 		flex-wrap: wrap;

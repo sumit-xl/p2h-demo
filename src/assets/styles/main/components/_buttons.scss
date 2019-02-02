@@ -97,4 +97,33 @@ $button-bg-disabled: #efefef !default;
 			background-color: $color-blue;
 		}
 	}
+
+	&--link {
+		border: 0;
+		font-weight: 500;
+		color: $color-blue;
+		background-color: transparent;
+		@include padding(5px 0);
+
+		&:after {
+			float: right;
+			content: '';
+			border: solid #358ED7;
+			border-width: 0 1px 1px 0;
+			transform: rotate(-45deg);
+			@include padding(3px);
+			@include margin(8px null null 8px);
+		}
+
+		&:hover,
+		&[type='submit']:hover,
+		&[type='reset']:hover,
+		&[type='button']:hover,
+		&:focus,
+		&.is-focused {
+			opacity: 0.8;
+			color: $color-blue !important;
+			background-color: transparent;
+		}
+	}
 }
