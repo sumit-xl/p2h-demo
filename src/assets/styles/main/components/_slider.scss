@@ -55,6 +55,7 @@
 		}
 		@include max-screen($breakpoint-phone) {
 			width: 100%;
+			text-align: center;
 			@include padding(10px 25px 50px);
 		}
 
