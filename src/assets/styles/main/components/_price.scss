@@ -1,0 +1,213 @@
+.price {
+	width: 100%;
+	background-color: $color-light;
+	@include position(relative, null);
+	@include padding(125px null null);
+	@include max-screen($breakpoint-desktop) {
+		@include padding(70px null null);
+	}
+	@include max-screen($breakpoint-phone) {
+		@include padding(30px null null);
+	}
+
+	&__heading {
+		@extend .article__heading;
+
+		p {
+			@include margin(null null 19px);
+			@include max-screen($breakpoint-tablet) {
+				@include margin(null null 10px);
+			}
+		}
+	}
+
+	p {
+		color: $color-gray;
+	}
+
+	&__list {
+		z-index: 9;
+		width: 99.9%;
+		display: flex;
+		flex-wrap: wrap;
+		border-radius: 7px;
+		justify-content: space-between;
+		background-color: $color-white;
+		@include position(relative, null);
+		@include margin(null null -132px);
+		@include max-screen($breakpoint-tablet) {
+			@include margin(null null -90px);
+		}
+
+		article {
+			width: 33.333%;
+			text-align: center;
+			@include padding(null 30px 28px);
+			@include max-screen($breakpoint-desktop) {
+				@include padding(null 15px 20px);
+			}
+			@include max-screen($breakpoint-phone) {
+				width: 100%;
+			}
+
+			p {
+				color: $color-light-gray;
+			}
+
+			&:nth-child(2) {
+				border-left: 1px solid $color-off-white;
+			}
+
+			&.is-active {
+				border-radius: 0 7px 7px 0;
+				background-color: $color-sky-blue;
+				@include max-screen($breakpoint-phone) {
+					border-radius: 0 0 7px 7px;
+				}
+
+				p {
+					color: rgba($color-white, 0.6);
+				}
+
+				li {
+					color: $color-white;
+				}
+
+				.price__top {
+					border-color: rgba($color-white, 0.2);
+
+					strong {
+						color: $color-white;
+					}
+
+					span {
+						color: rgba($color-white, 0.6);
+					}
+				}
+
+				.price__mid {
+					border-color: rgba($color-white, 0.2);
+
+					span {
+						color: $color-white;
+					}
+
+					small {
+						color: rgba($color-white, 0.7);
+					}
+				}
+			}
+		}
+	}
+
+	&__top {
+		border-bottom: 1px solid $color-light-alt;
+		@include padding(30px 20px 18px);
+
+		strong {
+			display: block;
+			font-size: 14px;
+			font-weight: 500;
+			color: $color-blue;
+			letter-spacing: 0.08em;
+			@include padding(null null 5px);
+		}
+
+		span {
+			color: $color-light-gray;
+		}
+	}
+
+	&__mid {
+		border-bottom: 1px solid $color-light-alt;
+		@include padding(40px 5px 10px);
+		@include max-screen($breakpoint-desktop) {
+			@include padding(30px 0 5px);
+		}
+		@include max-screen($breakpoint-tablet) {
+			min-height: 205px;
+		}
+		@include max-screen($breakpoint-phone) {
+			min-height: 10px;
+			@include padding(20px null);
+		}
+
+		span {
+			display: block;
+			font-size: 52px;
+			line-height: 1;
+			font-weight: 300;
+			color: $heading-color;
+			letter-spacing: -0.04em;
+			@include padding(null null 4px);
+			@include max-screen($breakpoint-tablet) {
+				font-size: 42px;
+			}
+			@include max-screen($breakpoint-phone) {
+				font-size: 32px;
+			}
+		}
+
+		small {
+			display: block;
+			font-size: 14px;
+			color: $color-light-gray;
+			@include padding(null null 20px);
+		}
+
+		p {
+			@include max-screen($breakpoint-desktop) {
+				font-size: 15px;
+			}
+			@include max-screen($breakpoint-phone) {
+				@include margin(null null 0);
+			}
+		}
+	}
+
+	&__bottom {
+		@include position(relative, null);
+		@include padding(14px null null null);
+
+		ul {
+			@include padding(null null 38px);
+			@include max-screen($breakpoint-phone) {
+				@include padding(null null 20px);
+			}
+
+			li {
+				font-size: 14px;
+				text-align: left;
+				color: $color-light-gray;
+				@include padding(16px null 16px 31px);
+				@include position(relative, null);
+				@include max-screen($breakpoint-phone) {
+					@include padding(5px null);
+				}
+
+				&:after {
+					content: 'L';
+					font-size: 20px;
+					color: $color-green;
+					transform: scaleX(-1) rotate(-45deg);
+					@include position(absolute, 9px null null 5px);
+					@include max-screen($breakpoint-phone) {
+						top: 0;
+					}
+				}
+
+				&.is-inactive {
+					color: $color-disabled;
+
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.button {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,100 @@
+$button-padding: 11px 15px 10px !default;
+
+$button-height: auto !default;
+
+$button-font-family: $font-family-base !default;
+$button-font-size-base: 16px !default;
+$button-font-weight: 500 !default;
+
+$button-color: #fff !default;
+$button-color-hover-base: #fff !default;
+$button-color-disabled: #999 !default;
+
+$button-border-size: 0 !default;
+$button-border-style: solid !default;
+$button-border-color: #2e6da4 !default;
+$button-border-color-hover: #286090 !default;
+$button-border-color-disabled: #666 !default;
+$button-border-radius: 6px !default;
+
+$button-bg: #7DC855 !default;
+$button-bg-hover: darken(#7DC855, 15%) !default;
+$button-bg-disabled: #efefef !default;
+
+// # Elements
+// =============================================== */
+
+.button {
+	text-align: center;
+	height: $button-height;
+	line-height: $button-height;
+	display: inline-block;
+	cursor: pointer;
+	vertical-align: middle;
+	font-family: $button-font-family;
+	font-weight: $button-font-weight;
+	color: $button-color;
+	touch-action: manipulation;
+	border: $button-border-size $button-border-style $button-border-color;
+	border-radius: $button-border-radius;
+	background: $button-bg;
+	user-select: none;
+	transition: color $base-duration $base-timing, border-color $base-duration $base-timing, background-color $base-duration $base-timing;
+	@include margin(null null 0);
+	@include padding($button-padding);
+	font-size: $button-font-size-base;
+
+	&:hover,
+	&[type='submit']:hover,
+	&[type='reset']:hover,
+	&[type='button']:hover,
+	&:focus,
+	&.is-focused {
+		color: $button-color-hover-base !important;
+		text-decoration: none;
+		background-color: $button-bg-hover;
+	}
+
+	&:active,
+	&.is-active {
+		background-image: none;
+	}
+
+	&:disabled,
+	&.is-disabled {
+		color: $button-color-disabled;
+		background-color: $button-bg-disabled;
+	}
+
+	&--lg {
+		@include padding(20px 35px);
+		@include max-screen($breakpoint-tablet) {
+			@include padding(15px 30px);
+		}
+		@include max-screen($breakpoint-phone) {
+			@include padding(10px 20px);
+		}
+	}
+
+	&--alt {
+		color: $color-blue;
+		background-color: transparent;
+		border: 2px solid $color-light-alt;
+		@include padding(10px 35px 9px);
+		@include max-screen($breakpoint-tablet) {
+			@include padding(10px 35px 9px);
+		}
+
+		&:hover,
+		&[type='submit']:hover,
+		&[type='reset']:hover,
+		&[type='button']:hover,
+		&:focus,
+		&.is-focused {
+			text-decoration: none;
+			border-color: $color-blue;
+			color: $color-white !important;
+			background-color: $color-blue;
+		}
+	}
+}

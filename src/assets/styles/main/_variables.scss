@@ -30,7 +30,11 @@ $gutter-side-phone: 20px; // Used when base width is reached
 $color-error: #d9534f;
 $color-success: #5cb85c;
 $color-info: #5bc0de;
+$color-disabled: #BFC7CE;
 $color-white: #fff;
+$color-off-white: #F4F4F4;
+$color-light: #F9F9F9;
+$color-light-alt: #E1E8EE;
 $color-black: #000;
 $color-info: #5bc0de;
 $color-green: #7DC855;
@@ -38,7 +42,7 @@ $color-gray: #5E6977;
 $color-gray-dark: #545E6B;
 $color-light-gray: #86939E;
 $color-sky-blue: #39ADD1;
-$color-light-blue: #358ED7;
+$color-blue: #358ED7;
 
 // Breakpoints
 $breakpoint-small: 479px;

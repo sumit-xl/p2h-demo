@@ -11,12 +11,16 @@
 	}
 
 	&__heading {
+		text-align: center;
 		@include padding(null null 59px);
-		@include max-screen($breakpoint-tablet) {
+		@include max-screen($breakpoint-desktop) {
 			@include padding(null null 40px);
 		}
+		@include max-screen($breakpoint-tablet) {
+			@include padding(null null 30px);
+		}
 		@include max-screen($breakpoint-phone) {
-			@include padding(null null 25px);
+			@include padding(null null 20px);
 		}
 
 		p {

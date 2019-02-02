@@ -102,6 +102,12 @@ h2 {
 	text-align: center;
 	letter-spacing: -0.04em;
 	font-size: $font-size-h2;
+	@include max-screen($breakpoint-tablet) {
+		font-size: $font-size-h1 - 10px;
+	}
+	@include max-screen($breakpoint-phone) {
+		font-size: $font-size-h1 - 18px;
+	}
 }
 
 h3 {
