@@ -18,11 +18,27 @@ jQuery( document ).ready( function( $ ) {
 		}
 	} );
 
+	$(document).on('click', function(event){
+		var $trigger = $('.header');
+		if($trigger !== event.target && !$trigger.has(event.target).length){
+			$('.header nav').slideUp('fast');
+			$( '.header__menu-toggle' ).removeClass( 'is-active' );
+		}
+	});
+
 	$( '.js-toggle-language' ).on( 'click', function( event ) {
 		event.preventDefault();
 		$( '.footer__language' ).toggleClass( 'is-active' );
 		$( '.footer__language ul' ).slideToggle( 'fast' );
 	} );
+
+	$(document).on('click', function(event){
+		var $trigger = $('.footer__language');
+		if($trigger !== event.target && !$trigger.has(event.target).length){
+			$('.footer__language ul').slideUp('fast');
+			$( '.footer__language' ).removeClass( 'is-active' );
+		}
+	});
 
 	$( '.footer__language ul li a' ).on( 'click', function() {
 		event.preventDefault();

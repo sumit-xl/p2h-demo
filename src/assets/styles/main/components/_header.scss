@@ -10,7 +10,6 @@
 	@include padding(38px null 37px);
 	@include position(fixed, 0 null null 0);
 	@include max-screen($breakpoint-phone) {
-		@include position(absolute, null);
 		@include padding(25px null);
 	}
 

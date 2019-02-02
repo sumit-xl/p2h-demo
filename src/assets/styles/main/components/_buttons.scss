@@ -112,7 +112,7 @@ $button-bg-disabled: #efefef !default;
 			border-width: 0 1px 1px 0;
 			transform: rotate(-45deg);
 			@include padding(3px);
-			@include margin(8px null null 8px);
+			@include margin(7px null null 8px);
 		}
 
 		&:hover,

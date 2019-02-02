@@ -131,13 +131,13 @@
 		}
 
 		ul {
-			width: 110px;
+			width: 107px;
 			float: right;
 			display: none;
 			@include max-screen($breakpoint-tablet) {
 				width: 100%;
-				text-align: center;
 				float: none;
+				text-align: center;
 			}
 
 			li {
